@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Eleutheria</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>    
+  </head>
+  <body>
+    <div class=flexbox>
+      <div class="left_panel" id="left_panel">
+        <div class="title_menu"></div>
+
+        <div class="content_menu">
+          <ul id="content_menu_folders"></ul>
+          <ul id="content_menu_files"></ul>
+        </div>
+
+        <div class="footer_menu">
+          <span>© 2020 Archylex GNU GPLv3</<span>
+        </div>
+      </div>
+
+      <div class="desktop" id="desktop">
+        <canvas id="animajs"></canvas>
+        
+        <div id="file_viewer">
+          <div id="window_panel">
+            <div class="window_panel_button" id="maximize_window"></div>
+            <div class="window_panel_button" id="close_window"></div>                
+          </div>
+          
+          <div id="window_content"></div>
+        </div>        
+      </div>  
+
+      <div id="lang_panel">          
+          <span id="en" class="lang">English</span><span id="pl" class="lang">Polski</span><span id="ua" class="lang">Українська</span><span id="ru" class="lang">Русский</span>
+      </div>
+      <div id="langs"></div>          
+    </div>
+
+    <script src="js/anima.js"></script>
+    <script src="js/langs.js"></script>
+    <script src="js/webfs.js"></script>    
+    <script src="js/modal-window.js"></script>
+
+  </body>
+</html>
