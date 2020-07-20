@@ -102,6 +102,7 @@ ul#content_menu_folders {
 #window_content {
   padding: 22px;
   z-index: 1;
+  overflow-y: auto;
 }
 
 .window_panel_button {
@@ -162,4 +163,18 @@ ul#content_menu_folders {
 
 #en {
   margin-left: 24px;
+}
+
+#line_login {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+#login {
+  width: 18px;
+  height: 22px;
+  float: right;
+  cursor: pointer;
+  background-image: url("/images/login.png");
+  background-repeat: no-repeat;
 }

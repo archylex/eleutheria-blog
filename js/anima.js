@@ -1,9 +1,9 @@
+var bond = 20; 
+var count = 200;
+
 var canvas = document.getElementById("animajs");
 ctx = canvas.getContext('2d');
 fitToContainer(canvas);
-
-var bond = 20; 
-var count = 200;
 
 function fitToContainer(canvas){
   canvas.style.width='100%';

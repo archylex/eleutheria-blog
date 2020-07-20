@@ -1,4 +1,5 @@
 var last_tree = 0;
+var last_content = 0;
 
 function updateFS(id) {
     $("ul#content_menu_folders").html('');
@@ -84,6 +85,19 @@ function getContent(id) {
     );
 }
 
+function updateContent(id) {
+    if (display_modal) {
+        closeModalWindow("file_viewer");
+        setTimeout(() => {  
+            $("#window_content").html(''); 
+            getContent(id);        
+        }, 700);            
+    } else {
+        $("#window_content").html(''); 
+        getContent(id);        
+    }
+}
+
 function clickListner() {
     $(".menu_folder").click(function() {  	
         last_tree = this.id;
@@ -91,22 +105,16 @@ function clickListner() {
   	});
 
     $(".menu_file").click(function() {  	
-        if (display_modal) {
-            closeModalWindow("file_viewer");
-
-            setTimeout(() => {  
-                $("#window_content").html(''); 
-                getContent(this.id);        
-            }, 700);            
-        } else {
-            $("#window_content").html(''); 
-            getContent(this.id);        
-        }
-  	});
+        last_content = this.id;
+        updateContent(this.id);
+  	});    
 }
 
 function refreshFS() {
     updateFS(last_tree);
+
+    if (last_content > 0)
+        updateContent(last_content);
 }
 
 $(document).ready(function() {  
